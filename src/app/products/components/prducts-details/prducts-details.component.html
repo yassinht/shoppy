@@ -1,1 +1,36 @@
-<p>prducts-details works!</p>
+<html lang="en">
+
+<head>
+  <title>Harvest vase</title>
+  <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper" *ngIf="!loading">
+    <div class="product-img">
+      <img src="{{data.image}}" height="420" width="327">
+    </div>
+
+    <div class="product-info">
+      <h5>  catergory : {{data.category}} | rating : {{data.rating.rate}} </h5>
+
+
+      <div class="product-text">
+        <h1>{{data.title}}</h1>
+        <p>{{data.description}}</p>
+      </div>
+      <div class="product-price-btn">
+
+        <p> price : <span>{{data.rating.count}}</span>$</p> <br> <br>
+        <button type="button">buy now</button>
+      </div>
+
+    </div>
+  </div>
+  <div class="text-center">
+    <app-spinner *ngIf="loading"></app-spinner>
+
+  </div>
+</body>
+
+</html>
